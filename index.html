@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blessing in the Roads Home Care - Compassionate Connecticut Senior Care</title>
+    
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royalPurple: '#34217A',
+                        carePink: '#E91E63',
+                        accentLavender: '#F3EEFF',
+                        softCream: '#FAF7F5',
+                        darkText: '#1F2937',
+                        lightGray: '#6B7280',
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'premium': '12px',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        /* Custom premium animations & visual accents */
+        .gradient-bg {
+            background: linear-gradient(135deg, #FAF7F5 0%, #F3EEFF 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(243, 238, 255, 0.6) 0%, rgba(250, 247, 245, 0.8) 100%);
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 30px -10px rgba(52, 33, 122, 0.15);
+        }
+        .premium-border {
+            border: 1px solid rgba(52, 33, 122, 0.08);
+        }
+        .pulse-pink {
+            animation: pulse-pink 2s infinite;
+        }
+        @keyframes pulse-pink {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(233, 30, 99, 0); }
+        }
+    </style>
+</head>
+<body class="font-inter text-darkText bg-softCream antialiased selection:bg-royalPurple selection:text-white">
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-royalPurple/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Identity & Logo -->
+                <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-12 h-12 rounded-full bg-royalPurple flex items-center justify-center text-white transition-transform group-hover:scale-105">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block font-playfair text-xl sm:text-2xl font-bold text-royalPurple tracking-tight leading-tight">Blessing in the Roads</span>
+                        <span class="block text-xs uppercase tracking-widest text-carePink font-bold">Home Care</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-darkText/80">
+                    <a href="#about" class="hover:text-royalPurple transition-colors">About Us</a>
+                    <a href="#why-choose-us" class="hover:text-royalPurple transition-colors">Why Choose Us</a>
+                    <a href="#services" class="hover:text-royalPurple transition-colors">Services</a>
+                    <a href="#process" class="hover:text-royalPurple transition-colors">Our Approach</a>
+                    <a href="#testimonials" class="hover:text-royalPurple transition-colors">Testimonials</a>
+                    <a href="#contact" class="hover:text-royalPurple transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA Actions -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="tel:8609840869" class="flex items-center gap-2 text-royalPurple font-bold hover:text-carePink transition-colors">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>(860) 984-0869</span>
+                    </a>
+                    <a href="#contact" class="bg-royalPurple hover:bg-royalPurple/90 text-white font-semibold py-2.5 px-5 rounded-premium text-sm transition-all shadow-md">
+                        Schedule Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md text-royalPurple hover:bg-accentLavender focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-royalPurple/10 px-4 pt-4 pb-6 space-y-3 transition-all duration-300">
+            <a href="#about" class="block py-2 px-3 rounded-premium hover:bg-accentLavender text-royalPurple font-semibold transition-all">About Us</a>
+            <a href="#why-choose-us" class="block py-2 px-3 rounded-premium hover:bg-accentLavender text-royalPurple font-semibold transition-all">Why Choose Us</a>
+            <a href="#services" class="block py-2 px-3 rounded-premium hover:bg-accentLavender text-royalPurple font-semibold transition-all">Services</a>
+            <a href="#process" class="block py-2 px-3 rounded-premium hover:bg-accentLavender text-royalPurple font-semibold transition-all">Our Approach</a>
+            <a href="#testimonials" class="block py-2 px-3 rounded-premium hover:bg-accentLavender text-royalPurple font-semibold transition-all">Testimonials</a>
+            <a href="#contact" class="block py-2 px-3 rounded-premium hover:bg-accentLavender text-royalPurple font-semibold transition-all">Contact</a>
+            
+            <div class="pt-4 border-t border-royalPurple/5 flex flex-col gap-3">
+                <a href="tel:8609840869" class="flex items-center justify-center gap-2 bg-accentLavender text-royalPurple font-bold py-3 rounded-premium text-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Now: (860) 984-0869</span>
+                </a>
+                <a href="#contact" class="bg-carePink hover:bg-carePink/90 text-white font-bold py-3 rounded-premium text-center transition-all">
+                    Schedule Free Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative hero-gradient overflow-hidden py-12 lg:py-24">
+        <!-- Abstract background sparkles -->
+        <div class="absolute top-10 right-10 w-48 h-48 bg-carePink/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-72 h-72 bg-royalPurple/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Premium tag -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accentLavender border border-royalPurple/10 text-royalPurple text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-heart text-carePink"></i> Trusted Connecticut Home Care
+                    </div>
+                    
+                    <h1 class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-extrabold text-royalPurple leading-tight">
+                        Compassionate Home Care. <br>
+                        <span class="text-carePink italic">Peace of Mind.</span> Every Day.
+                    </h1>
+                    
+                    <p class="text-lg text-darkText/90 leading-relaxed font-inter">
+                        Personalized in-home care services for seniors and families across Connecticut. At <strong class="text-royalPurple">Blessing in the Roads Home Care</strong>, we do more than provide care—we bring comfort, dignity, companionship, and peace of mind directly to your home.
+                    </p>
+
+                    <!-- Trust Checklist Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 py-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </span>
+                            <span class="font-semibold text-darkText/95">Experienced & Screened Caregivers</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </span>
+                            <span class="font-semibold text-darkText/95">Customized Care Plans</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </span>
+                            <span class="font-semibold text-darkText/95">24/7 Support Available</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </span>
+                            <span class="font-semibold text-darkText/95">Licensed, Insured & Bonded</span>
+                        </div>
+                    </div>
+
+                    <!-- CTAs Box -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                        <a href="#contact" class="pulse-pink bg-carePink hover:bg-carePink/90 text-white font-bold py-4 px-8 rounded-premium text-center shadow-lg hover:shadow-xl transition-all duration-200">
+                            Schedule a Free Consultation
+                        </a>
+                        <a href="tel:8609840869" class="bg-royalPurple hover:bg-royalPurple/90 text-white font-bold py-4 px-8 rounded-premium text-center shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone-volume"></i> Speak With a Specialist
+                        </a>
+                    </div>
+
+                    <!-- Direct Quick Call Info -->
+                    <div class="flex items-center gap-3 pt-2 text-sm text-lightGray">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Serving all of CT • Call Today: <a href="tel:8609840869" class="text-royalPurple font-bold hover:underline">(860) 984-0869</a></span>
+                    </div>
+                </div>
+
+                <!-- Right Hero Media: Official Flyer Preview & Action -->
+                <div class="lg:col-span-5 flex flex-col justify-center items-center">
+                    <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-full">
+                        <!-- Soft warm shadow backdrop -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-royalPurple to-carePink rounded-2xl blur-lg opacity-30"></div>
+                        
+                        <!-- Main Card Wrap representing the official agency flyer -->
+                        <div class="relative bg-white p-4 rounded-2xl custom-shadow border border-royalPurple/10 overflow-hidden group">
+                            <!-- Image container representing flyer "brk-7027f450-493e-4e75-ac90-492610bbd6eb.jpg" -->
+                            <div class="relative aspect-[3/4.4] w-full rounded-lg overflow-hidden bg-slate-100">
+                                <img src="brk-7027f450-493e-4e75-ac90-492610bbd6eb.jpg" 
+                                     alt="Blessing in the Roads Home Care Official Flyer featuring Lynda Charles Founder and senior client"
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x880/34217a/ffffff?text=Blessing+in+the+Roads+Home+Care+Flyer'">
+                                
+                                <!-- Floating Interactive Badges over Image -->
+                                <div class="absolute top-3 left-3 bg-royalPurple/90 text-white px-2.5 py-1 rounded text-[10px] font-bold tracking-wider uppercase">
+                                    Official Flyer
+                                </div>
+                                
+                                <button onclick="openFlyerModal()" class="absolute inset-0 bg-royalPurple/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-bold gap-2 text-sm">
+                                    <span class="bg-royalPurple px-4 py-2.5 rounded-premium flex items-center gap-2 shadow-lg">
+                                        <i class="fa-solid fa-magnifying-glass-plus"></i> View Full Flyer
+                                    </span>
+                                </button>
+                            </div>
+                            <!-- Small caption in context -->
+                            <div class="mt-3 text-center">
+                                <p class="text-xs text-lightGray italic">
+                                    Interactive view of our official Connecticut Care Brochure.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges & Stats Strip -->
+    <section class="bg-royalPurple text-white py-10 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-carePink/20 via-transparent to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="space-y-1">
+                    <div class="text-4xl font-playfair font-bold text-carePink">100%</div>
+                    <div class="text-sm uppercase tracking-wider text-accentLavender font-semibold">Caregiver Screening</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-4xl font-playfair font-bold text-carePink">24/7</div>
+                    <div class="text-sm uppercase tracking-wider text-accentLavender font-semibold">Support Coverage</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-4xl font-playfair font-bold text-carePink">CT</div>
+                    <div class="text-sm uppercase tracking-wider text-accentLavender font-semibold">Licensed & Bonded</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-4xl font-playfair font-bold text-carePink">Custom</div>
+                    <div class="text-sm uppercase tracking-wider text-accentLavender font-semibold">Personalized Plans</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Emotional Context & Heart Design -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentLavender text-royalPurple text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-heart"></i> Who We Are
+                    </div>
+                    
+                    <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-royalPurple leading-tight">
+                        Care You Can Trust.<br>Compassion You Can Feel.
+                    </h2>
+                    
+                    <div class="w-20 h-1 bg-carePink rounded-full"></div>
+                    
+                    <p class="text-darkText/90 leading-relaxed">
+                        <strong>Blessing in the Roads Home Care</strong> was founded with a simple mission: to provide exceptional care, genuine compassion, and peace of mind for every family we serve.
+                    </p>
+                    
+                    <p class="text-darkText/80 leading-relaxed">
+                        We understand that every individual has unique needs. That's why we create personalized care plans that support independence, safety, comfort, and overall well-being while allowing clients to remain in the place they love most—their home.
+                    </p>
+                    
+                    <p class="text-darkText/80 leading-relaxed">
+                        Whether your loved one needs companionship, daily assistance, or ongoing support, our dedicated caregivers are committed to treating them like family.
+                    </p>
+
+                    <!-- Our Promise Block (Premium Styled Quote Card) -->
+                    <div class="bg-accentLavender p-6 rounded-premium border-l-4 border-carePink shadow-sm relative overflow-hidden">
+                        <span class="absolute right-4 top-2 text-royalPurple/5 text-8xl font-serif select-none pointer-events-none">“</span>
+                        <h4 class="font-playfair font-bold text-royalPurple text-lg mb-1">Our Promise</h4>
+                        <p class="italic text-royalPurple/90 font-medium">
+                            "We don't just provide care—we bring blessings to your home."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Trust & Founder Introduction Card -->
+                <div class="lg:col-span-6 space-y-8">
+                    <!-- Founder Section styled beautifully with picture overlay aspect -->
+                    <div class="bg-softCream p-8 rounded-2xl custom-shadow border border-royalPurple/5 space-y-6">
+                        <div class="flex flex-col sm:flex-row gap-6 items-center">
+                            <!-- Circular cropped avatar of the founder or fallback vector avatar representation -->
+                            <div class="relative flex-shrink-0">
+                                <div class="absolute -inset-1 bg-gradient-to-tr from-carePink to-royalPurple rounded-full blur opacity-45"></div>
+                                <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-white relative bg-white">
+                                    <img src="brk-7027f450-493e-4e75-ac90-492610bbd6eb.jpg" 
+                                         alt="Lynda Charles - Founder of Blessing in the Roads Home Care"
+                                         class="w-full h-full object-cover scale-[2.2] object-[40%_25%]"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/150x150/e91e63/ffffff?text=LC'">
+                                </div>
+                            </div>
+                            <div class="text-center sm:text-left">
+                                <span class="text-xs font-bold text-carePink uppercase tracking-widest">Founder & Owner</span>
+                                <h3 class="font-playfair text-2xl font-bold text-royalPurple mt-0.5">Lynda Charles</h3>
+                                <p class="text-sm text-lightGray">Blessing in the Roads Home Care</p>
+                            </div>
+                        </div>
+
+                        <p class="text-darkText/80 italic leading-relaxed text-sm bg-white p-4 rounded-premium border border-royalPurple/5">
+                            "With a passion for serving others and improving the lives of seniors and families, Lynda Charles established Blessing in the Roads Home Care to deliver compassionate, professional, and dependable care."
+                        </p>
+
+                        <p class="text-sm text-darkText/80 leading-relaxed">
+                            Her vision is built on dignity, respect, and personalized attention—ensuring every client receives the support they deserve and every family experiences confidence and peace of mind.
+                        </p>
+
+                        <!-- Call Out Action inside Founder message box -->
+                        <div class="pt-2 border-t border-royalPurple/5 flex items-center justify-between flex-wrap gap-4 text-xs">
+                            <span class="font-bold text-royalPurple flex items-center gap-1.5">
+                                <i class="fa-solid fa-square-phone"></i> Direct Consultation:
+                            </span>
+                            <a href="tel:8609840869" class="text-carePink font-bold text-sm hover:underline">(860) 984-0869</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-20 bg-accentLavender/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royalPurple text-white text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-star"></i> Why Choose Us
+                </span>
+                <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-royalPurple">
+                    Why Families Choose Blessing in the Roads Home Care
+                </h2>
+                <div class="w-20 h-1 bg-carePink mx-auto rounded-full"></div>
+                <p class="text-lightGray leading-relaxed">
+                    When it comes to caring for your loved ones, trust matters. Families choose us because we combine professional expertise with genuine compassion.
+                </p>
+            </div>
+
+            <!-- Features Grid layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 hover:transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-royalPurple flex items-center justify-center text-white mb-6">
+                        <i class="fa-solid fa-user-doctor text-xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Experienced Caregivers</h3>
+                    <p class="text-sm text-lightGray leading-relaxed">
+                        Carefully screened, trained, background-checked, and dedicated professionals you can trust unconditionally in your home.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 hover:transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-carePink flex items-center justify-center text-white mb-6">
+                        <i class="fa-solid fa-clipboard-user text-xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Personalized Care Plans</h3>
+                    <p class="text-sm text-lightGray leading-relaxed">
+                        Customized services tailored to each client's specific medical needs, daily preferences, and general lifestyle choice.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 hover:transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-royalPurple flex items-center justify-center text-white mb-6">
+                        <i class="fa-solid fa-hand-holding-heart text-xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Compassionate Approach</h3>
+                    <p class="text-sm text-lightGray leading-relaxed">
+                        Respectful, patient-centered care focused exclusively on maintaining client dignity, self-respect, and independence.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 hover:transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-carePink flex items-center justify-center text-white mb-6">
+                        <i class="fa-solid fa-clock text-xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">24/7 Support</h3>
+                    <p class="text-sm text-lightGray leading-relaxed">
+                        Reliable around-the-clock medical or wellness assistance whenever you or your loved ones need us.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 hover:transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-royalPurple flex items-center justify-center text-white mb-6">
+                        <i class="fa-solid fa-users-viewfinder text-xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Family Peace of Mind</h3>
+                    <p class="text-sm text-lightGray leading-relaxed">
+                        Consistent communication, regular safety check-ins, and dependable care that you can count on with absolute security.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 hover:transform hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-carePink flex items-center justify-center text-white mb-6">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Licensed, Insured & Bonded</h3>
+                    <p class="text-sm text-lightGray leading-relaxed">
+                        Professional protection, strict state compliance, and confidence for every Connecticut family we serve.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentLavender text-royalPurple text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-handshake-angle text-carePink"></i> Our Core Services
+                </span>
+                <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-royalPurple">
+                    Our Home Care Services
+                </h2>
+                <div class="w-20 h-1 bg-carePink mx-auto rounded-full"></div>
+                <p class="text-lightGray leading-relaxed">
+                    We provide flexible care solutions designed to support seniors, individuals recovering from illness, and families needing additional professional assistance.
+                </p>
+            </div>
+
+            <!-- Dynamic Grid Layout of Services -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Companion Care Card -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 hover:border-royalPurple transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-royalPurple/10 flex items-center justify-center text-royalPurple mb-6 group-hover:bg-royalPurple group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-mug-hot text-xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Companion Care</h3>
+                        <p class="text-sm text-lightGray leading-relaxed mb-6">
+                            Meaningful companionship and social engagement to reduce loneliness, stimulate cognitive mental activity, and promote total emotional well-being.
+                        </p>
+                    </div>
+                    <button onclick="openServiceDetail('companion')" class="text-carePink font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all self-start">
+                        View Details <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Personal Care Assistance Card -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 hover:border-royalPurple transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-royalPurple/10 flex items-center justify-center text-royalPurple mb-6 group-hover:bg-royalPurple group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-bath text-xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Personal Care Assistance</h3>
+                        <p class="text-sm text-lightGray leading-relaxed mb-6">
+                            Dignified assistance with sensitive activities of daily living including bathing, dressing, hygiene upkeep, styling, and general safety mobility.
+                        </p>
+                    </div>
+                    <button onclick="openServiceDetail('personal')" class="text-carePink font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all self-start">
+                        View Details <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Medication Reminders Card -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 hover:border-royalPurple transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-royalPurple/10 flex items-center justify-center text-royalPurple mb-6 group-hover:bg-royalPurple group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-pills text-xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Medication Reminders</h3>
+                        <p class="text-sm text-lightGray leading-relaxed mb-6">
+                            Essential assistance, schedule monitoring, and physical reminders so therapeutic regimens are strictly complied with in safety.
+                        </p>
+                    </div>
+                    <button onclick="openServiceDetail('medication')" class="text-carePink font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all self-start">
+                        View Details <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Meal Preparation Card -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 hover:border-royalPurple transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-royalPurple/10 flex items-center justify-center text-royalPurple mb-6 group-hover:bg-royalPurple group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-utensils text-xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Meal Preparation</h3>
+                        <p class="text-sm text-lightGray leading-relaxed mb-6">
+                            Nutritious and balanced meal planning, culinary preparation, grocery budgeting, and fresh cleaning based on personal medical diets.
+                        </p>
+                    </div>
+                    <button onclick="openServiceDetail('meal')" class="text-carePink font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all self-start">
+                        View Details <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Light Housekeeping Card -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 hover:border-royalPurple transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-royalPurple/10 flex items-center justify-center text-royalPurple mb-6 group-hover:bg-royalPurple group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-broom text-xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Light Housekeeping</h3>
+                        <p class="text-sm text-lightGray leading-relaxed mb-6">
+                            Maintaining clean, sanitary, well-organized, comfortable, and safe living environments to lower home safety risks.
+                        </p>
+                    </div>
+                    <button onclick="openServiceDetail('housekeeping')" class="text-carePink font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all self-start">
+                        View Details <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Transportation & Errands Card -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 hover:border-royalPurple transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-royalPurple/10 flex items-center justify-center text-royalPurple mb-6 group-hover:bg-royalPurple group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-car-side text-xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Transportation & Errands</h3>
+                        <p class="text-sm text-lightGray leading-relaxed mb-6">
+                            Reliable companion accompaniment and driving assistance for doctor appointments, pharmacy pick-ups, grocery shopping, and community events.
+                        </p>
+                    </div>
+                    <button onclick="openServiceDetail('transport')" class="text-carePink font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all self-start">
+                        View Details <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Respite Care Highlight Section -->
+            <div class="mt-16 bg-gradient-to-r from-royalPurple to-[#4d33b0] text-white p-8 md:p-12 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-4 max-w-2xl">
+                    <span class="bg-carePink text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Respite Support</span>
+                    <h3 class="font-playfair text-2xl md:text-3xl font-bold">Are You a Family Caregiver in Need of Rest?</h3>
+                    <p class="text-sm text-accentLavender leading-relaxed">
+                        Our short-term Respite Care provides relief and premium support for primary family caregivers. Take time to recharge, knowing your loved one is resting under professional oversight.
+                    </p>
+                </div>
+                <a href="#contact" class="flex-shrink-0 bg-white hover:bg-softCream text-royalPurple font-bold py-4 px-8 rounded-premium shadow-md transition-all text-center w-full md:w-auto">
+                    Inquire About Respite Care
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Care Process (3 Steps) -->
+    <section id="process" class="py-20 bg-accentLavender/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-royalPurple text-white text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-bezier-curve"></i> Simple Steps to Peace of Mind
+                </span>
+                <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-royalPurple">
+                    Our Compassionate Approach
+                </h2>
+                <div class="w-20 h-1 bg-carePink mx-auto rounded-full"></div>
+                <p class="text-lightGray leading-relaxed">
+                    Setting up dedicated home care is simple. We walk with you through every phase, creating safety and trust.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 relative text-center">
+                    <div class="w-16 h-16 rounded-full bg-royalPurple text-white font-playfair font-bold text-2xl flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-accentLavender">
+                        1
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Free In-Home Consultation</h3>
+                    <p class="text-xs text-lightGray leading-relaxed">
+                        We meet with your family in the comfort of home to discuss personal care requirements, routine schedules, and primary health goals.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 relative text-center">
+                    <div class="w-16 h-16 rounded-full bg-carePink text-white font-playfair font-bold text-2xl flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-accentLavender">
+                        2
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Customized Care Plan</h3>
+                    <p class="text-xs text-lightGray leading-relaxed">
+                        Our healthcare coordinators craft an individual care plan detailing schedules, emergency contacts, and daily priorities.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-premium custom-shadow border border-royalPurple/5 relative text-center">
+                    <div class="w-16 h-16 rounded-full bg-royalPurple text-white font-playfair font-bold text-2xl flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-accentLavender">
+                        3
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold text-royalPurple mb-3">Caregiver Matching</h3>
+                    <p class="text-xs text-lightGray leading-relaxed">
+                        We connect you with a carefully screened, compassionate caregiver matching your family's personal routine, schedule, and style.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Focused Core Principles Strip -->
+            <div class="mt-16 bg-white p-8 rounded-premium border border-royalPurple/10">
+                <h4 class="font-playfair text-lg font-bold text-royalPurple text-center mb-6">Our Caregivers Focus Every Visit On:</h4>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+                    <div class="p-3 bg-softCream rounded-lg">
+                        <i class="fa-solid fa-universal-access text-carePink text-lg mb-1.5 block"></i>
+                        <span class="text-xs font-bold text-royalPurple block">Preserving Independence</span>
+                    </div>
+                    <div class="p-3 bg-softCream rounded-lg">
+                        <i class="fa-solid fa-chart-line text-carePink text-lg mb-1.5 block"></i>
+                        <span class="text-xs font-bold text-royalPurple block">Enhancing Quality of Life</span>
+                    </div>
+                    <div class="p-3 bg-softCream rounded-lg">
+                        <i class="fa-solid fa-shield-cat text-carePink text-lg mb-1.5 block"></i>
+                        <span class="text-xs font-bold text-royalPurple block">Promoting Safety & Comfort</span>
+                    </div>
+                    <div class="p-3 bg-softCream rounded-lg">
+                        <i class="fa-solid fa-face-smile text-carePink text-lg mb-1.5 block"></i>
+                        <span class="text-xs font-bold text-royalPurple block">Emotional Well-being</span>
+                    </div>
+                    <div class="p-3 bg-softCream rounded-lg">
+                        <i class="fa-solid fa-dove text-carePink text-lg mb-1.5 block"></i>
+                        <span class="text-xs font-bold text-royalPurple block">Family Peace of Mind</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentLavender text-royalPurple text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-quote-left text-carePink"></i> Family Feedback
+                </span>
+                <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-royalPurple">
+                    What Families Are Saying
+                </h2>
+                <div class="w-20 h-1 bg-carePink mx-auto rounded-full"></div>
+                <p class="text-lightGray leading-relaxed">
+                    Nothing speaks louder than the testimonials of families we help every day.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 custom-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-darkText/80 italic leading-relaxed mb-6">
+                            "The caregivers are compassionate, reliable, and truly care about their clients. Our family finally has peace of mind knowing our mother is in good hands."
+                        </p>
+                    </div>
+                    <div class="border-t border-royalPurple/5 pt-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-royalPurple text-white flex items-center justify-center font-bold text-sm">
+                            FM
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-royalPurple">Family Member</span>
+                            <span class="block text-[11px] text-lightGray">Connecticut</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 custom-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-darkText/80 italic leading-relaxed mb-6">
+                            "Professional service with a personal touch. They treated my father with dignity and respect every step of the way."
+                        </p>
+                    </div>
+                    <div class="border-t border-royalPurple/5 pt-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-carePink text-white flex items-center justify-center font-bold text-sm">
+                            CF
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-royalPurple">Client Family</span>
+                            <span class="block text-[11px] text-lightGray">Hartford, CT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-softCream p-8 rounded-premium border border-royalPurple/10 custom-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-darkText/80 italic leading-relaxed mb-6">
+                            "Excellent communication, dependable caregivers, and exceptional support. Highly recommended."
+                        </p>
+                    </div>
+                    <div class="border-t border-royalPurple/5 pt-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-royalPurple text-white flex items-center justify-center font-bold text-sm">
+                            HC
+                        </div>
+                        <div>
+                            <span class="block text-xs font-bold text-royalPurple">Happy Client</span>
+                            <span class="block text-[11px] text-lightGray">Stamford, CT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area & Coverage Checker -->
+    <section class="py-16 bg-accentLavender/60 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carePink text-white text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-map-location-dot"></i> Service Coverage
+                    </span>
+                    <h2 class="font-playfair text-3xl sm:text-4xl font-bold text-royalPurple">
+                        Proudly Serving Connecticut
+                    </h2>
+                    <p class="text-sm text-darkText/80 leading-relaxed">
+                        Blessing in the Roads Home Care proudly serves Connecticut and surrounding communities with dependable, compassionate in-home care services. Contact us directly to confirm if our professional caregivers cover your precise neighborhood.
+                    </p>
+
+                    <!-- Coverage Quick Checker Form -->
+                    <div class="bg-white p-6 rounded-premium border border-royalPurple/10 custom-shadow space-y-4">
+                        <h4 class="font-playfair font-bold text-royalPurple">Check Coverage Instantly</h4>
+                        <div class="flex gap-2">
+                            <input type="text" id="area-input" placeholder="Enter Connecticut Town or ZIP" 
+                                   class="w-full px-4 py-2.5 rounded-lg border border-lightGray/30 focus:outline-none focus:border-royalPurple text-sm">
+                            <button onclick="checkCoverage()" class="bg-royalPurple hover:bg-royalPurple/95 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition-colors whitespace-nowrap">
+                                Check Area
+                            </button>
+                        </div>
+                        <p id="area-feedback" class="text-xs font-semibold hidden"></p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-white p-6 rounded-2xl custom-shadow border border-royalPurple/5 flex flex-col items-center text-center space-y-6">
+                        <!-- Simulated CT Map Silhouette Icon/Visual representation -->
+                        <div class="w-24 h-24 rounded-full bg-accentLavender flex items-center justify-center text-royalPurple mb-2 animate-bounce">
+                            <i class="fa-solid fa-location-dot text-4xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-royalPurple">Connecticut & Surrounding Counties</h3>
+                        <p class="text-xs text-lightGray max-w-sm">
+                            Our caregivers reside in neighborhoods throughout CT, allowing fast emergency scheduling, seamless commute coverage, and high reliability.
+                        </p>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="px-3 py-1 bg-accentLavender text-royalPurple rounded-full text-xs font-semibold">Hartford County</span>
+                            <span class="px-3 py-1 bg-accentLavender text-royalPurple rounded-full text-xs font-semibold">New Haven County</span>
+                            <span class="px-3 py-1 bg-accentLavender text-royalPurple rounded-full text-xs font-semibold">Fairfield County</span>
+                            <span class="px-3 py-1 bg-accentLavender text-royalPurple rounded-full text-xs font-semibold">Litchfield County</span>
+                            <span class="px-3 py-1 bg-accentLavender text-royalPurple rounded-full text-xs font-semibold">Tolland County</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action Urgent Call Strip -->
+    <section class="bg-carePink text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div class="space-y-2">
+                    <h3 class="font-playfair text-2xl md:text-3xl font-bold">Have Urgent Care Questions?</h3>
+                    <p class="text-sm text-white/90">Our friendly coordinators are waiting to assist you and your loved ones immediately.</p>
+                </div>
+                <a href="tel:8609840869" class="bg-white hover:bg-softCream text-carePink font-bold py-4 px-8 rounded-premium shadow-lg text-lg flex items-center justify-center gap-3 transition-transform hover:scale-[1.02]">
+                    <i class="fa-solid fa-phone"></i> Call (860) 984-0869
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Consultation Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                
+                <!-- Contact Information Column -->
+                <div class="lg:col-span-5 bg-royalPurple text-white p-8 md:p-12 rounded-2xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute -bottom-20 -right-20 w-60 h-60 bg-carePink/25 rounded-full blur-3xl"></div>
+                    
+                    <div class="space-y-8 relative z-10">
+                        <div class="space-y-3">
+                            <span class="text-xs uppercase tracking-widest text-carePink font-bold">Get In Touch</span>
+                            <h2 class="font-playfair text-3xl font-bold">Let's Talk About Your Care Needs</h2>
+                            <p class="text-xs text-accentLavender leading-relaxed">
+                                Whether you're looking for immediate assistance or planning ahead for a loved one, we're here to help you navigate every step.
+                            </p>
+                        </div>
+
+                        <!-- Direct Contacts List -->
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <span class="w-10 h-10 rounded-xl bg-carePink flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                                    <i class="fa-solid fa-phone"></i>
+                                </span>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-widest text-accentLavender font-semibold">Phone</span>
+                                    <a href="tel:8609840869" class="block text-lg font-bold hover:underline">(860) 984-0869</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <span class="w-10 h-10 rounded-xl bg-carePink flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-widest text-accentLavender font-semibold">Email</span>
+                                    <a href="mailto:lyndacharies.care@gmail.com" class="block text-sm font-bold hover:underline">lyndacharies.care@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <span class="w-10 h-10 rounded-xl bg-carePink flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+                                    <i class="fa-solid fa-globe"></i>
+                                </span>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-widest text-accentLavender font-semibold">Website</span>
+                                    <a href="http://www.blessingintheroads.com" target="_blank" rel="noopener noreferrer" class="block text-sm font-bold hover:underline">www.blessingintheroads.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-white/10 relative z-10">
+                        <div class="text-xs text-accentLavender">
+                            <span class="font-bold text-white block mb-1">Office Hours:</span>
+                            <span>Lines Open 24/7 For Urgent Senior Consultations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact & Consultation Form Column -->
+                <div class="lg:col-span-7 bg-softCream p-8 md:p-12 rounded-2xl border border-royalPurple/5 custom-shadow flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <h3 class="font-playfair text-2xl font-bold text-royalPurple">Request Your Free Consultation</h3>
+                            <p class="text-xs text-lightGray">
+                                Complete our quick form and a compassionate care specialist will contact you directly to discuss your family's needs.
+                            </p>
+                        </div>
+
+                        <!-- Main Interactive Form -->
+                        <form id="consultation-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-royalPurple uppercase mb-1.5" for="full-name">Full Name *</label>
+                                    <input type="text" id="full-name" required placeholder="John Doe" 
+                                           class="w-full px-4 py-3 rounded-lg border border-lightGray/20 focus:outline-none focus:border-royalPurple bg-white text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-royalPurple uppercase mb-1.5" for="phone-number">Phone Number *</label>
+                                    <input type="tel" id="phone-number" required placeholder="(555) 555-5555" 
+                                           class="w-full px-4 py-3 rounded-lg border border-lightGray/20 focus:outline-none focus:border-royalPurple bg-white text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-royalPurple uppercase mb-1.5" for="email-address">Email Address *</label>
+                                    <input type="email" id="email-address" required placeholder="john@example.com" 
+                                           class="w-full px-4 py-3 rounded-lg border border-lightGray/20 focus:outline-none focus:border-royalPurple bg-white text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-royalPurple uppercase mb-1.5" for="care-for">Care Needed For *</label>
+                                    <select id="care-for" required class="w-full px-4 py-3 rounded-lg border border-lightGray/20 focus:outline-none focus:border-royalPurple bg-white text-sm">
+                                        <option value="">Select Option</option>
+                                        <option value="parent">Parent / Elder Relative</option>
+                                        <option value="spouse">Spouse</option>
+                                        <option value="self">Self</option>
+                                        <option value="other">Other Loved One</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-royalPurple uppercase mb-1.5" for="message">Message *</label>
+                                <textarea id="message" rows="4" required placeholder="Tell us a little bit about your loved one's situation and preferences..." 
+                                          class="w-full px-4 py-3 rounded-lg border border-lightGray/20 focus:outline-none focus:border-royalPurple bg-white text-sm"></textarea>
+                            </div>
+
+                            <!-- Form Status Message Wrapper (Hidden by default) -->
+                            <div id="form-success-banner" class="hidden p-4 bg-emerald-100 border-l-4 border-emerald-500 rounded-lg text-emerald-800 text-xs">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-base"></i>
+                                    <div>
+                                        <span class="font-bold block">Thank you for reaching out!</span>
+                                        <span>Your private consultation request has been received. Our care specialists will contact you shortly.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-carePink hover:bg-carePink/95 text-white font-bold py-4 px-6 rounded-premium shadow-lg transition-all text-center uppercase tracking-wider text-sm">
+                                Schedule My Free Consultation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Improved Footer -->
+    <footer class="bg-royalPurple text-white pt-16 pb-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+                <!-- Branding Column -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-royalPurple">
+                            <i class="fa-solid fa-heart-pulse text-lg"></i>
+                        </div>
+                        <span class="font-playfair text-2xl font-bold tracking-tight">Blessing in the Roads</span>
+                    </div>
+                    <p class="text-xs text-accentLavender/90 leading-relaxed max-w-sm">
+                        Providing personalized care, companionship, and peace of mind for seniors and families who deserve trusted support at home.
+                    </p>
+                    <div class="flex gap-3 pt-2">
+                        <span class="px-2.5 py-1 rounded bg-white/10 text-[10px] uppercase font-bold text-accentLavender tracking-wide">Licensed</span>
+                        <span class="px-2.5 py-1 rounded bg-white/10 text-[10px] uppercase font-bold text-accentLavender tracking-wide">Insured</span>
+                        <span class="px-2.5 py-1 rounded bg-white/10 text-[10px] uppercase font-bold text-accentLavender tracking-wide">Bonded</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="lg:col-span-2 space-y-3">
+                    <h4 class="font-playfair text-lg font-bold text-carePink">Quick Links</h4>
+                    <ul class="space-y-2 text-xs text-accentLavender/80">
+                        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#why-choose-us" class="hover:text-white transition-colors">Why Choose Us</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our Services Column -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="font-playfair text-lg font-bold text-carePink">Our Services</h4>
+                    <ul class="space-y-2 text-xs text-accentLavender/80">
+                        <li>Companion Care</li>
+                        <li>Personal Care Assistance</li>
+                        <li>Medication Reminders</li>
+                        <li>Meal Preparation</li>
+                        <li>Transportation & Errands</li>
+                        <li>Respite Care</li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Emergency Column -->
+                <div class="lg:col-span-3 space-y-4">
+                    <h4 class="font-playfair text-lg font-bold text-carePink font-bold">Contact Info</h4>
+                    <ul class="space-y-2 text-xs text-accentLavender/90">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-carePink"></i> <a href="tel:8609840869" class="hover:underline">(860) 984-0869</a></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-carePink"></i> <a href="mailto:lyndacharies.care@gmail.com" class="hover:underline text-[11px] sm:text-xs">lyndacharies.care@gmail.com</a></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-carePink"></i> <a href="http://blessingintheroads.com" target="_blank" rel="noopener noreferrer" class="hover:underline">blessingintheroads.com</a></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-carePink mt-0.5"></i> <span>Serving Connecticut & Surrounding Areas</span></li>
+                    </ul>
+                    
+                    <div class="p-3 bg-white/5 rounded-premium border border-white/10 text-xs">
+                        <strong class="text-carePink block mb-0.5">Emergency Support:</strong>
+                        <p class="text-[11px] text-accentLavender">Call for private consultation and custom care setup support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Compliance Bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-accentLavender/70">
+                <div class="text-center md:text-left space-y-1">
+                    <span class="block font-bold text-white">Blessing in the Roads Home Care</span>
+                    <span class="block">Compassionate Care. Peace of Mind. Every Day.</span>
+                </div>
+                <div class="text-center md:text-right space-y-1">
+                    <span>© 2026 Blessing in the Roads Home Care. All Rights Reserved.</span>
+                    <span class="block text-[10px]">Licensed • Insured • Bonded</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Custom Service details Modal -->
+    <div id="service-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-royalPurple/10 relative">
+            <button onclick="closeServiceDetail()" class="absolute top-4 right-4 text-royalPurple/40 hover:text-royalPurple focus:outline-none">
+                <i class="fa-solid fa-circle-xmark text-2xl"></i>
+            </button>
+            <div class="space-y-4">
+                <div id="modal-icon-wrap" class="w-12 h-12 rounded-full bg-accentLavender flex items-center justify-center text-royalPurple">
+                    <!-- Dynamic Icon -->
+                </div>
+                <h3 id="modal-title" class="font-playfair text-2xl font-bold text-royalPurple">
+                    <!-- Dynamic Title -->
+                </h3>
+                <p id="modal-description" class="text-sm text-lightGray leading-relaxed">
+                    <!-- Dynamic Description -->
+                </p>
+                <div id="modal-bullets-wrap" class="bg-softCream p-4 rounded-premium">
+                    <span class="block text-xs font-bold text-royalPurple uppercase mb-2">Activities Covered:</span>
+                    <ul id="modal-bullets" class="space-y-1 text-xs text-darkText/80 list-disc list-inside">
+                        <!-- Dynamic bullets -->
+                    </ul>
+                </div>
+                <a href="#contact" onclick="closeServiceDetail()" class="block text-center bg-royalPurple hover:bg-royalPurple/90 text-white font-bold py-3 rounded-premium text-sm shadow transition-colors">
+                    Request Care Plan For This Service
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Flyer Zoom / Magnifier Modal -->
+    <div id="flyer-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+        <div class="relative max-w-lg w-full bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between">
+            <!-- Modal Header -->
+            <div class="bg-royalPurple p-4 text-white flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span class="font-playfair text-sm font-bold">Official Care Brochure / Flyer</span>
+                </div>
+                <button onclick="closeFlyerModal()" class="text-white/80 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-circle-xmark text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Image Content -->
+            <div class="aspect-[3/4.4] w-full overflow-y-auto p-4 bg-slate-900 flex items-center justify-center">
+                <img src="brk-7027f450-493e-4e75-ac90-492610bbd6eb.jpg" 
+                     alt="Official Flyer Blessing in the Roads Home Care" 
+                     class="max-w-full max-h-[80vh] object-contain rounded-lg"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x880/34217a/ffffff?text=Blessing+in+the+Roads+Home+Care+Flyer'">
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-accentLavender p-4 text-center space-y-2">
+                <p class="text-xs text-royalPurple font-semibold">
+                    Scan QR on flyer for quick digital references or call directly at <a href="tel:8609840869" class="underline font-bold text-carePink">(860) 984-0869</a>.
+                </p>
+                <button onclick="closeFlyerModal()" class="text-xs bg-royalPurple text-white font-bold px-4 py-1.5 rounded-premium">
+                    Close View
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Client-Side JS Logic -->
+    <script>
+        // Toggle mobile navigation menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Close mobile menu on clicking any navigation anchor link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            });
+        });
+
+        // Interactive Service Data Setup
+        const serviceData = {
+            companion: {
+                title: 'Companion Care',
+                icon: '<i class="fa-solid fa-mug-hot text-2xl"></i>',
+                description: 'Meaningful companionship and social engagement is designed to stimulate mental activity, reduce isolation, and promote rich emotional well-being for our senior clients.',
+                bullets: [
+                    'Engaging in friendly conversation & card games',
+                    'Accompanying on scenic outdoor walks',
+                    'Sharing common hobbies and reading books',
+                    'Assisting with scrapbooking & letter writing',
+                    'Encouraging family connection over video calls'
+                ]
+            },
+            personal: {
+                title: 'Personal Care Assistance',
+                icon: '<i class="fa-solid fa-bath text-2xl"></i>',
+                description: 'Dignified physical assistance is designed to support independence safely in everyday situations. Our professionals undergo deep screening to provide personal touch with absolute security.',
+                bullets: [
+                    'Safe bathing, shower guidance, and grooming assistance',
+                    'Dressing, styling and wardrobe selection support',
+                    'Personal hygiene assistance with utmost respect',
+                    'Mobility support, transferring and posture checking',
+                    'Incontinence support and toilet mapping'
+                ]
+            },
+            medication: {
+                title: 'Medication Reminders',
+                icon: '<i class="fa-solid fa-pills text-2xl"></i>',
+                description: 'Our caregivers monitor prescription schedules and provide gentle physical cues and water assistance, ensuring therapeutic medical guidelines are met precisely.',
+                bullets: [
+                    'Checking correct times and dosages',
+                    'Assisting with opening difficult bottle lids',
+                    'Maintaining logbooks of daily intake',
+                    'Coordination of physical prescriptions and refills',
+                    'Family alerts in case of missed doses'
+                ]
+            },
+            meal: {
+                title: 'Meal Preparation',
+                icon: '<i class="fa-solid fa-utensils text-2xl"></i>',
+                description: 'We believe premium nourishment is critical to longevity. Caregivers assist with meal prep tailored strictly to specific health, diabetic, or soft food diets.',
+                bullets: [
+                    'Personalized daily meal planning',
+                    'Nutritious breakfast, lunch, and dinner cooking',
+                    'Healthy food shopping & fresh ingredient tracking',
+                    'Proper storage of food leftovers',
+                    'Cleaning up kitchen surfaces and sanitizing'
+                ]
+            },
+            housekeeping: {
+                title: 'Light Housekeeping',
+                icon: '<i class="fa-solid fa-broom text-2xl"></i>',
+                description: 'Our team preserves clean, comfortable, and risk-free home spaces. Clean homes help seniors avoid tripping hazards and promote calm physical spirits.',
+                bullets: [
+                    'Dusting, vacuuming and cleaning floors',
+                    'Taking out bedroom and kitchen trash',
+                    'Washing primary client laundry and linens',
+                    'Sanitizing high-touch surfaces like knobs',
+                    'Changing bed sheets and tidying pillows'
+                ]
+            },
+            transport: {
+                title: 'Transportation & Errands',
+                icon: '<i class="fa-solid fa-car-side text-2xl"></i>',
+                description: 'We help senior clients stay linked to their favorite community organizations, pick up critical medicines, and attend physical checkups securely.',
+                bullets: [
+                    'Escorting to physician appointments',
+                    'Picking up physical prescriptions from pharmacy',
+                    'Accompanying to grocery stores and post office',
+                    'Attending local social activities and parks',
+                    'Reliable loading and unloading of walkers'
+                ]
+            }
+        };
+
+        // Open service details inside modal overlay
+        function openServiceDetail(key) {
+            const data = serviceData[key];
+            if (!data) return;
+
+            document.getElementById('modal-icon-wrap').innerHTML = data.icon;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-description').textContent = data.description;
+            
+            const bulletsContainer = document.getElementById('modal-bullets');
+            bulletsContainer.innerHTML = '';
+            data.bullets.forEach(bullet => {
+                const li = document.createElement('li');
+                li.className = 'py-0.5';
+                li.textContent = bullet;
+                bulletsContainer.appendChild(li);
+            });
+
+            document.getElementById('service-modal').classList.remove('hidden');
+        }
+
+        // Close service details modal
+        function closeServiceDetail() {
+            document.getElementById('service-modal').classList.add('hidden');
+        }
+
+        // Open Flyer image interactive preview
+        function openFlyerModal() {
+            document.getElementById('flyer-modal').classList.remove('hidden');
+        }
+
+        // Close Flyer image modal
+        function closeFlyerModal() {
+            document.getElementById('flyer-modal').classList.add('hidden');
+        }
+
+        // Interactive Connecticut Coverage Checker
+        function checkCoverage() {
+            const val = document.getElementById('area-input').value.trim().toLowerCase();
+            const feedback = document.getElementById('area-feedback');
+            
+            feedback.classList.remove('hidden', 'text-emerald-600', 'text-red-500');
+            
+            if (!val) {
+                feedback.textContent = 'Please type a city or ZIP code first.';
+                feedback.classList.add('text-red-500');
+                return;
+            }
+
+            // Simple demo DB of covered CT regions/zips
+            const coveredList = [
+                'hartford', 'new haven', 'stamford', 'waterbury', 'norwalk', 'danbury', 'new britain',
+                'bristol', 'meriden', 'west haven', 'milford', 'middletown', 'shelton', 'torrington',
+                'bridgeport', 'fairfield', 'litchfield', 'greenwich', '06103', '06511', '06901', '06001', '06702'
+            ];
+
+            const isCovered = coveredList.some(ct => val.includes(ct));
+
+            if (isCovered) {
+                feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Yes! We serve ' + document.getElementById('area-input').value + '. Call (860) 984-0869 to match with a caregiver immediately.';
+                feedback.classList.add('text-emerald-600');
+            } else {
+                feedback.innerHTML = '<i class="fa-solid fa-circle-info"></i> We are very likely active in ' + document.getElementById('area-input').value + '! Contact us directly at (860) 984-0869 to confirm care services in your area.';
+                feedback.classList.add('text-emerald-600');
+            }
+        }
+
+        // Handle Contact and Free Consultation form submit
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Get form inputs
+            const name = document.getElementById('full-name').value;
+            const phone = document.getElementById('phone-number').value;
+            const email = document.getElementById('email-address').value;
+            
+            // Validate briefly
+            if (!name || !phone || !email) {
+                return;
+            }
+
+            // Display Success Banner smoothly
+            const successBanner = document.getElementById('form-success-banner');
+            successBanner.classList.remove('hidden');
+            
+            // Reset fields
+            document.getElementById('consultation-form').reset();
+
+            // Smooth scroll success banner into view
+            successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
